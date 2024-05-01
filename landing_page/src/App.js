@@ -1,9 +1,9 @@
-
+import Home from "./Pages/Home";
 
 
 function App() {
   return (
-   <h1>HOANF</h1>
+   <Home></Home>
   );
 }
 
