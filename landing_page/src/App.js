@@ -1,9 +1,32 @@
-import Home from "./Pages/Home";
+import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
 
+import {publicRoute} from "./Route"
+import DefaultLayout from "./Components/Layout/DefaultLayout";
+import { Fragment } from "react";
 
 function App() {
   return (
-   <Home></Home>
+  <Router>
+    <div className="App">
+      <Routes>
+        {publicRoute.map((route,index)=>{
+          let Layout=DefaultLayout
+          if(route.layout){
+            Layout=route.layout
+          }
+          else if(route.layout===null){
+            Layout=Fragment
+          }
+          return (
+            <Route key={index} path={route.path} 
+            element={<Layout><route.element/></Layout>}>
+
+            </Route>
+          )
+        })}
+      </Routes>
+    </div>
+  </Router>
   );
 }
 
