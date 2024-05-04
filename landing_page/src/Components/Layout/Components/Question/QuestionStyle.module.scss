@@ -1,0 +1,85 @@
+@import "../../../GlobalStyle/GlobalStyle.module.scss";
+
+$padding_bt:1.8rem;
+
+.questions {
+    background-color: $sub_bgcolor;
+}
+
+.question {
+    width: 92%;
+    margin-left: 4%;
+}
+
+h1 {
+    font-size: 6rem;
+    margin-bottom: 4rem;
+}
+
+.question-content {
+    display: flex;
+}
+
+.question-title {
+    flex: 0.6;
+
+    .questiontt {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+        color: gray;
+
+        span {
+            font-weight: 700;
+        }
+
+        svg {
+            width: 5%;
+            margin-right: 2%;
+        }
+    }
+
+}
+
+.question-detail {
+    flex: 1;
+    display: none;
+    .title {
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            width: 60%;
+            text-transform: uppercase;
+        }
+
+        svg {
+            font-size: 2.4rem;
+            cursor: pointer;
+        }
+    }
+}
+.question-child{
+    margin-bottom: 4rem;
+    padding-bottom: $padding_bt;
+    overflow: hidden;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        background-color: $sub_bgcolor;
+        border-bottom: 1px solid black;
+        height: $padding_bt;
+        width: 100%;
+        bottom: 0%;
+    }
+}
+.hidden-detail{
+    height: 7rem;
+}
+
+.enable{
+    color: black!important;
+    display: block;
+}
