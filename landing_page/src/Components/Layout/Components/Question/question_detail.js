@@ -1,3 +1,19 @@
+import { faArrowRotateRight } from "@fortawesome/free-solid-svg-icons";
+import { faRectangleList, faCircleQuestion } from "@fortawesome/free-regular-svg-icons";
+let TitleQuestion=[
+  {
+title:"FUNDING",
+  icon:faRectangleList
+},
+{
+  title:"REPAYMENT",
+    icon:faArrowRotateRight
+  },
+  {
+    title:"GENERALS",
+      icon:faCircleQuestion
+    }
+]
 let question_detail=[
     {
         Topic:"funding",
@@ -53,4 +69,4 @@ let question_detail=[
         ]
     }
 ]
-export {question_detail};
+export {TitleQuestion,question_detail};

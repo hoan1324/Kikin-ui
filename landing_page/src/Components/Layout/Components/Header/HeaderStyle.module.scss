@@ -3,30 +3,48 @@
 $button_color:#55dd4a;
 $text_hover:#e3ded9;
 $button_hover:#3b9b34;
+//class an
+.position-fixed{
+    position: fixed;
+    z-index: 1000;
+}
+
+//
 .header{
     background-color: $main_bgcolor;
     padding: 1% 0;
+    width: 100%;
 }
 nav{
   display: flex;
-  justify-content: space-between;
   width: 90%;
   margin-left: 5%;
   align-items: center;
-  
+  .logo{
+    flex: auto;
+  }
+  .tt-login{
+    flex: auto;
+    align-items: center;
+   display: flex;
+  }
+  .title{
+    flex: auto;
+}
 }
 a{
     color: $main_textcolor;
-    font-weight: 500;
+    font-weight: 600;
 }
 ul{
     display: flex;
-    li{
-        margin-left: 3rem;
-      a:hover,a:active{
-            color: $text_hover;
-      } 
-    }
+}
+li{
+    list-style: none;
+    margin-left: 3rem;
+  a:hover,a:active{
+        color: $text_hover;
+  } 
 }
 .login {
     button{
@@ -36,6 +54,7 @@ ul{
         padding: 1px 5px;
         border-radius: 10px;
         padding: 0.8em 1rem;
+        
         &:active{
             border-width: 3px;
         }
@@ -52,7 +71,73 @@ ul{
         }
     }
     button:last-child:hover{
-        background-color: #3b9b34;
+        background-color: $button_hover;
     }
     
+}
+.iconbars{
+    font-size: 1.1rem;
+    border-radius: 100px;
+    width: 2.6rem;
+    text-align: center;
+    height: 2.6rem;
+    align-content: center;
+    background-color: $button_color;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: -8%;
+}
+
+//Responsive
+@media only screen and (max-width: 988px) {
+    .header{
+        padding: 2.5% 0;
+    }
+   nav{
+    position: relative;
+    
+   }
+    nav,ul,.tt-login{
+    flex-direction: column;
+   }
+   .logo{
+    display: flex;
+   }
+   .tt-login{
+    position: absolute;
+    background-color: $main_bgcolor;
+    top: 110%;
+    padding-top: 2%;
+    width: 120%;
+    overflow: hidden;  
+   }
+   .login{
+    display: flex;
+    flex-direction: column;
+   }
+   li{
+    margin: 0;
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 4% 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        word-spacing: 1px;
+   }
+.iconbars{
+    display: block;
+}
+}
+
+//animation
+.animationVisible{
+    display: flex;
+    max-height: 14rem !important;
+    transition: max-height 1s ease-out
+}
+.animationHidden{
+    max-height: 0rem !important;
+    transition: max-height 1s ease-out;
+  
 }

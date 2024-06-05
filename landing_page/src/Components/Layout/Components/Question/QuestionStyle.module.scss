@@ -1,7 +1,8 @@
 @import "../../../GlobalStyle/GlobalStyle.module.scss";
+@import "../Question/QuestionStyleAnimation.scss";
+$padding_bt: 1.8rem;
 
-$padding_bt:1.8rem;
-
+//Set thuoc tinh giá trị ban đầu
 .questions {
     background-color: $sub_bgcolor;
 }
@@ -22,27 +23,29 @@ h1 {
 
 .question-title {
     flex: 0.6;
-
+    
     .questiontt {
         font-size: 1.5rem;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.6rem;
         color: gray;
+        cursor: pointer;
 
         span {
             font-weight: 700;
         }
-
+        
         svg {
             width: 5%;
             margin-right: 2%;
         }
+        
     }
 
 }
 
 .question-detail {
     flex: 1;
-    display: none;
+
     .title {
         font-size: 1.1rem;
         display: flex;
@@ -60,12 +63,33 @@ h1 {
         }
     }
 }
-.question-child{
+
+.question-dt {
+    display: none;
+}
+
+.question-child {
+
     margin-bottom: 4rem;
     padding-bottom: $padding_bt;
     overflow: hidden;
     position: relative;
-    &::after{
+    
+    .title{
+        cursor: pointer;
+        position: relative;
+    }
+  .reverse-minus{
+    position: absolute;
+    right: 0%;
+    transform: rotateZ(90deg);
+  
+  }
+  p{
+    max-height: 0;
+    overflow: hidden;
+  }
+    &::after {
         content: "";
         position: absolute;
         background-color: $sub_bgcolor;
@@ -73,13 +97,69 @@ h1 {
         height: $padding_bt;
         width: 100%;
         bottom: 0%;
+       
     }
 }
-.hidden-detail{
+
+.hidden-detail {
     height: 7rem;
 }
 
-.enable{
-    color: black!important;
-    display: block;
+
+//Hieu ung
+.enable {
+
+    color: black !important;
+
+    display: block !important;
 }
+.animationRotate{
+    transform: rotateZ(90deg);
+    animation: rotateMinus 1s ease-out 0s 1;
+    animation-fill-mode: forwards;
+    
+}
+.animationRotateReverse{
+   transform: rotate(180deg);
+   animation: rotateMinusReverse 1s ease-out 0s 1;
+   
+}
+.animationVisible{
+    max-height: 8rem !important;
+    transition: max-height 1s ease-in-out
+}
+.animationHidden{
+    max-height: 0rem !important;
+    transition: max-height 1s ease-in-out
+}
+//Responsive
+@media only screen and (max-width: 1000px) {
+    h1{
+        margin-bottom: 1.6rem;
+    }
+    .question-content{
+        flex-direction: column;
+    }
+    .question-title{
+        max-width: 100%;
+        flex: 1;  
+        margin-bottom: 2rem;
+        display: flex;
+      .questiontt{
+        flex: 0.3;
+      }
+        svg{
+            width: 1.6rem !important;
+            margin-right: 5% !important;
+        }
+    }
+    
+  }
+  @media only screen and (max-width: 760px) {
+    .question-title{
+       
+        flex-direction: column;
+        
+    }
+  }
+
