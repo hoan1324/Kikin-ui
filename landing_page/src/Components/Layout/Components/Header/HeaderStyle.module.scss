@@ -1,143 +1,157 @@
+// Import các biến và styles toàn cục
 @import "../../../GlobalStyle/GlobalStyle.module.scss";
 
-$button_color:#55dd4a;
-$text_hover:#e3ded9;
-$button_hover:#3b9b34;
-//class an
-.position-fixed{
+// Biến màu sắc và hover
+
+$text_hover: #e3ded9;
+
+// Class cho vị trí cố định
+.position-fixed {
     position: fixed;
     z-index: 1000;
 }
 
-//
-.header{
+// Header styles
+.header {
     background-color: $main_bgcolor;
     padding: 1% 0;
     width: 100%;
 }
-nav{
-  display: flex;
-  width: 90%;
-  margin-left: 5%;
-  align-items: center;
-  .logo{
+
+// Navigation styles
+nav {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    align-items: center;
+
+    // Link styles
+    a {
+        font-weight: 600;
+    }
+
+    ul {
+        display: flex;
+    }
+
+    li {
+        list-style: none;
+        margin-left: 3rem;
+
+        a {
+            color: $main_textcolor;
+
+            &:hover,
+            &:active {
+                color: $text_hover;
+            }
+        }
+    }
+}
+
+// Logo styles
+.logo {
     flex: auto;
-  }
-  .tt-login{
+}
+
+// Thông tin đăng nhập
+.tt-login {
     flex: auto;
     align-items: center;
-   display: flex;
-  }
-  .title{
-    flex: auto;
-}
-}
-a{
-    color: $main_textcolor;
-    font-weight: 600;
-}
-ul{
     display: flex;
 }
-li{
-    list-style: none;
-    margin-left: 3rem;
-  a:hover,a:active{
-        color: $text_hover;
-  } 
+
+// Tiêu đề
+.title {
+    flex: auto;
 }
+
+// Button styles
 .login {
-    button{
-        transition:background-color 0.5s;
-        background-color: #55dd4a;
-        border: 1px solid rgba(243,240,236,.3);
-        padding: 1px 5px;
-        border-radius: 10px;
-        padding: 0.8em 1rem;
-        
-        &:active{
-            border-width: 3px;
-        }
-        a{
+    button {
+
+        a {
             color: black;
         }
     }
-    button:first-child{
+
+    button:first-child {
         margin-right: 1.2rem;
         background-color: unset;
         box-shadow: 0px 0px 3px 1px #928b8b;
-        a{
+        &:active {
+            border-width: 3px;
+        }
+        a {
             color: $main_textcolor;
         }
     }
-    button:last-child:hover{
-        background-color: $button_hover;
-    }
-    
 }
-.iconbars{
+
+// Icon bars styles (mobile menu)
+.iconbars {
     font-size: 1.1rem;
     border-radius: 100px;
     width: 2.6rem;
     text-align: center;
     height: 2.6rem;
     align-content: center;
-    background-color: $button_color;
+    background-color: $button_color_green;
     display: none;
     position: absolute;
     right: 0;
     top: -8%;
+    cursor: pointer;
 }
 
-//Responsive
+// Responsive styles
 @media only screen and (max-width: 988px) {
-    .header{
+    .header {
         padding: 2.5% 0;
     }
-   nav{
-    position: relative;
-    
-   }
-    nav,ul,.tt-login{
-    flex-direction: column;
-   }
-   .logo{
-    display: flex;
-   }
-   .tt-login{
-    position: absolute;
-    background-color: $main_bgcolor;
-    top: 110%;
-    padding-top: 2%;
-    width: 120%;
-    overflow: hidden;  
-   }
-   .login{
-    display: flex;
-    flex-direction: column;
-   }
-   li{
-    margin: 0;
-        text-align: center;
-        font-size: 1.1rem;
-        padding: 4% 0;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        word-spacing: 1px;
-   }
-.iconbars{
-    display: block;
-}
-}
 
-//animation
-.animationVisible{
-    display: flex;
-    max-height: 14rem !important;
-    transition: max-height 1s ease-out
-}
-.animationHidden{
-    max-height: 0rem !important;
-    transition: max-height 1s ease-out;
-  
+    nav {
+        position: relative;
+
+        ul {
+            flex-direction: column;
+        }
+        li {
+            margin: 0;
+            text-align: center;
+            font-size: 1.1rem;
+            padding: 4% 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            word-spacing: 1px;
+        }
+    }
+
+    nav,
+    .tt-login {
+        flex-direction: column;
+    }
+
+    .logo {
+        display: flex;
+    }
+
+    .tt-login {
+        position: absolute;
+        background-color: $main_bgcolor;
+        top: 110%;
+        padding-top: 2%;
+        width: 120%;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .login {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .iconbars {
+        display: block;
+    }
 }

@@ -5,7 +5,7 @@ import { Header,Footer,Question } from "../Components";
 function DefaultLayout({children}) {
     const cx=classNames.bind(styles)
     return ( 
-        <div className={cx("container")} >
+        <div className={cx("body-page")} >
          
             <Header/>
         

@@ -1,27 +1,173 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-$main_bgcolor:#122315;
-$main_textcolor:#f4ede1;
-$sub_bgcolor:#f3ede4;
-*{
+$main_bgcolor: #122315;
+$main_textcolor: #f4ede1;
+$sub_bgcolor: #f3ede4;
+$button_color_green: #55dd4a;
+$button_hover_green: #77e46e;
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    font-size: 62,5%;
+
+html {
+    font-size: 62, 5%;
 }
-body{
-    font-family: 'Roboto',sans-serif;
+
+body {
+    font-family: 'Roboto', sans-serif;
     font-size: 1.6 rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
 }
-a{
+
+a {
     text-decoration: none;
 }
-ul{
+
+ul {
     list-style: none;
 }
 
+//Common class
+//imgae
+.img-family-circle{
+    img{
+        width: 168px;
+        height: 168px;
+        position: absolute;
+    }
+}
+.img-family-square{
+    img{
+        width: 180px;
+        height: 180px;
+        position: absolute;
+    }
+}
+//section 
+.parameter {
+    margin-top: 2rem;
+    font-size: 110%;
+}
+.section{
+    overflow: hidden;
+    h1{
+        font-size: 800%;
+        line-height: 77%;
+        font-weight: 900;
+    }
+    button {
+        margin-top: 2rem;
+        padding: 1% 2%;
+
+        a {
+            font-size: 120%;
+            font-weight: 700;
+            color: black;
+        }
+
+    }
+}
+//btn
+.btn-green {
+    transition: background-color 0.5s;
+    background-color: $button_color_green;
+    border: 1px solid rgba(243, 240, 236, .3);
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btnGreenHover {
+    &:hover {
+        background-color: $button_hover_green;
+    }
+
+}
+
+.btn-not-color {
+    background-color: transparent;
+    border: 1px solid $main_textcolor;
+    transition: background-color 1s;
+    padding: 1%;
+    border-radius: 16px;
+
+    &:hover,
+    &:active {
+        background-color: #aea1a16e;
+    }
+}
+
+
+//Position Component
+.image-position {
+    text-align: center;
+    position: relative;
+    padding-top: 14rem;
+    z-index: 10;
+}
+.title-position {
+    position: absolute;
+    top: 6rem;
+    width: 100%;
+    z-index: 10;
+}
+
+//Animation
+.animationVisible {
+    overflow: hidden;
+    max-height: 30rem !important;
+    transition: max-height 1s ease-in-out;
+}
+
+
+/* Hiệu ứng ẩn */
+.animationHidden {
+    overflow: hidden;
+    max-height: 0rem !important;
+    transition: max-height 1s ease-in-out;
+}
+
+//mediaquert common class
+@media only screen and (max-width: 970px) {
+    .parameter{
+        font-size: 90% !important;
+        margin-top: 0.2rem;
+       p{
+        margin-bottom: 0rem;
+       }
+    }
+    .image-position {
+        h1 {
+            font-size: 300% !important;
+        }
+
+        button {
+            padding: 2%;
+        }
+    }
+    .img-family{
+       .img-icon-postion{
+            width: 140px;
+            height: 140px;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .parameter{
+        font-size: 75% !important;
+    }
+    .image-position {
+        overflow: hidden;
+    }
+    .img-family{
+        .img-icon-postion{
+            width: 120px;
+            height: 120px;
+        }
+    }
+}

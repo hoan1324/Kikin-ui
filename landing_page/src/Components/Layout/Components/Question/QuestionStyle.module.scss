@@ -1,29 +1,35 @@
+/* Import các style cần thiết */
 @import "../../../GlobalStyle/GlobalStyle.module.scss";
 @import "../Question/QuestionStyleAnimation.scss";
+
+/* Định nghĩa padding bottom */
 $padding_bt: 1.8rem;
 
-//Set thuoc tinh giá trị ban đầu
+/* Cài đặt các thuộc tính cho phần tổng quan câu hỏi */
 .questions {
     background-color: $sub_bgcolor;
+    h1 {
+        font-size: 6rem;
+        margin-bottom: 4rem;
+        font-weight: 600;
+    }
 }
 
+/* Phần chi tiết của từng câu hỏi */
 .question {
     width: 92%;
     margin-left: 4%;
 }
 
-h1 {
-    font-size: 6rem;
-    margin-bottom: 4rem;
-}
-
+/* Phần nội dung của câu hỏi */
 .question-content {
     display: flex;
 }
 
+/* Tiêu đề của câu hỏi */
 .question-title {
     flex: 0.6;
-    
+
     .questiontt {
         font-size: 1.5rem;
         margin-bottom: 0.6rem;
@@ -33,16 +39,15 @@ h1 {
         span {
             font-weight: 700;
         }
-        
+
         svg {
             width: 5%;
             margin-right: 2%;
         }
-        
     }
-
 }
 
+/* Phần chi tiết của câu hỏi */
 .question-detail {
     flex: 1;
 
@@ -55,6 +60,8 @@ h1 {
         h2 {
             width: 60%;
             text-transform: uppercase;
+            font-weight: 600;
+            font-size: x-large;
         }
 
         svg {
@@ -64,31 +71,34 @@ h1 {
     }
 }
 
+/* Phần con của câu hỏi */
 .question-dt {
     display: none;
 }
 
+/* Phần con của từng câu hỏi */
 .question-child {
-
     margin-bottom: 4rem;
     padding-bottom: $padding_bt;
     overflow: hidden;
     position: relative;
-    
-    .title{
+
+    .title {
         cursor: pointer;
         position: relative;
     }
-  .reverse-minus{
-    position: absolute;
-    right: 0%;
-    transform: rotateZ(90deg);
-  
-  }
-  p{
-    max-height: 0;
-    overflow: hidden;
-  }
+
+    .reverse-minus {
+        position: absolute;
+        right: 0%;
+        transform: rotateZ(90deg);
+    }
+
+    p {
+        max-height: 0;
+        overflow: hidden;
+    }
+
     &::after {
         content: "";
         position: absolute;
@@ -97,69 +107,66 @@ h1 {
         height: $padding_bt;
         width: 100%;
         bottom: 0%;
-       
     }
 }
 
+/* Hiệu ứng cho phần chi tiết của câu hỏi */
 .hidden-detail {
     height: 7rem;
 }
 
-
-//Hieu ung
+/* Hiển thị các phần được bật */
 .enable {
-
     color: black !important;
-
     display: block !important;
 }
-.animationRotate{
+
+/* Hiệu ứng xoay */
+.animationRotate {
     transform: rotateZ(90deg);
-    animation: rotateMinus 1s ease-out 0s 1;
+    animation: rotateMinus 1s ease-in-out 0s 1;
     animation-fill-mode: forwards;
-    
 }
-.animationRotateReverse{
-   transform: rotate(180deg);
-   animation: rotateMinusReverse 1s ease-out 0s 1;
-   
+
+/* Hiệu ứng xoay ngược lại */
+.animationRotateReverse {
+    transform: rotate(180deg);
+    animation: rotateMinusReverse 1s ease-in-out 0s 1;
 }
-.animationVisible{
-    max-height: 8rem !important;
-    transition: max-height 1s ease-in-out
-}
-.animationHidden{
-    max-height: 0rem !important;
-    transition: max-height 1s ease-in-out
-}
-//Responsive
+
+
+/* Responsive cho màn hình nhỏ */
 @media only screen and (max-width: 1000px) {
-    h1{
-        margin-bottom: 1.6rem;
+    .questions {
+        h1 {
+            margin-bottom: 1.6rem;
+        }
     }
-    .question-content{
+
+    .question-content {
         flex-direction: column;
     }
-    .question-title{
+
+    .question-title {
         max-width: 100%;
-        flex: 1;  
+        flex: 1;
         margin-bottom: 2rem;
         display: flex;
-      .questiontt{
-        flex: 0.3;
-      }
-        svg{
+
+        .questiontt {
+            flex: 0.3;
+        }
+
+        svg {
             width: 1.6rem !important;
             margin-right: 5% !important;
         }
     }
-    
-  }
-  @media only screen and (max-width: 760px) {
-    .question-title{
-       
-        flex-direction: column;
-        
-    }
-  }
+}
 
+/* Responsive cho màn hình nhỏ hơn */
+@media only screen and (max-width: 760px) {
+    .question-title {
+        flex-direction: column;
+    }
+}

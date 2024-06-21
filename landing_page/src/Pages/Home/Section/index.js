@@ -1,0 +1,5 @@
+export {SectionOne} from "./Section1"
+export {SectionTwo} from "./Section2"
+export {SectionThree} from "./Section3"
+export {SectionSix} from "./Section6"
+export {SectionSeven} from "./Section7"
