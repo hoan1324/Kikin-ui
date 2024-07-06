@@ -1,95 +1,9 @@
 @import "../../Components/GlobalStyle/GlobalStyle.module.scss";
-$bg_color_section2:rgb(243, 237, 228);
-$section-6-h1-color:rgb(86, 96, 83);
-$section7-bg:rgb(115, 211, 235);
+
 .Home-body {
     background-color: $main_bgcolor;
 }
-//common class
-.section-bg{
-    background-color: $bg_color_section2;
-}
-//section-1
-.section-1 {
-    padding-top: 16rem;
 
-    h1 {
-        color: $main_textcolor;
-       
-
-        span {
-            color: $button_color_green;
-        }
-    }
-
-
-    img {
-        width: 100%;
-        background-color: $main_bgcolor;
-    }
-}
-.p-sec1{
-    color: white;
-}
-
-
-
-//section-2
-.section-2{
-    padding-bottom: 3rem;
-    h1{
-        font-size: 600%;
-    }
-}
-
-
-//section3
-.section-3{
-    padding-bottom: 3rem;
-
-}
-//section 6
-.section-6{
-    padding: 20rem 0;
-    .img-family-square{
-        img{
-            transform: rotateZ(-27deg);
-        &:first-child{
-            transform: rotateZ(13deg);
-        }
-        }
-
-    }
-}
-.title-family{
-   h1{
-    color:$section-6-h1-color ;
-    font-size: 450%;
-   }
-}
-//section7
-.section-7{
-    background-color: $section7-bg;
-} 
-.img-section7{
-    padding-top: 2rem;
-    img{
-        width: 96%;
-    }
-}
-.title-section7{
-    top: 8%;
-    font-size: 550% !important;
-    text-align: end !important;
-    color: #f4ede1;
-    right: 6%;
-    color: $main_textcolor;
-    line-height: 100% !important;
-}
-.parameter-section7{
-    margin-top: 0;
-    position: absolute
-}
 
 //animation
 .animation-change-color{
@@ -100,21 +14,20 @@ transition: color 1s;
     color: $section-6-h1-color;
     transition: color 1s;
 }
-//Responsive
+.animation-slide{
+animation: slide 15s linear 2s infinite alternate-reverse backwards  !important;
 
-
-
-
-
-@media only screen and (max-width: 970px) {
-    
-    }
-@media only screen and (max-width: 600px) {
-    .section-1 {
-    img{
-        transform: translateX(-27%);
-        width: 200%;
-    }
-    }
-    
 }
+
+
+
+@keyframes slide {
+    from{
+    transform: translate(-55%);
+    }
+    to{
+        transform: translate(-1%);
+
+    }
+}
+//Responsive

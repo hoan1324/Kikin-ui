@@ -3,12 +3,14 @@ import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
 import {publicRoute} from "./Route"
 import DefaultLayout from "./Components/Layout/DefaultLayout";
 import { Fragment } from "react";
+import ScrollToTop from "./Route/scrolltoTop";
 
 function App() {
   return (
   <Router>
     <div className="App">
-      <Routes>
+    <ScrollToTop>
+    <Routes>
         {publicRoute.map((route,index)=>{
           let Layout=DefaultLayout
           if(route.layout){
@@ -25,6 +27,7 @@ function App() {
           )
         })}
       </Routes>
+    </ScrollToTop>
     </div>
   </Router>
   );

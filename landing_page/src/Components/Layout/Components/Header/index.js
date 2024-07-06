@@ -2,6 +2,7 @@
 import classNames from "classnames/bind";
 import styles from "./HeaderStyle.module.scss";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
@@ -54,7 +55,7 @@ function Header({bgColor}) {
                     <div className={cx("title")} >
                         <ul>
                             <li><Link to="/WorkHow">How It Work</Link></li>
-                            <li><Link to="/">Pricing</Link></li>
+                            <li><HashLink to="/#Pricing">Pricing</HashLink></li>
                             <li><Link to="/Blog">Blog</Link></li>
                         </ul>
                     </div>
@@ -62,7 +63,7 @@ function Header({bgColor}) {
                         <Element className={cx((Element==="button")?"btn-green":"")}><Link to="/Login">LOG IN</Link></Element>
                         {(Element==="button")?
                         <Element className={cx("btn-green","btnGreenHover")}><Link to="/Login">GET FUNDING</Link></Element>
-                        :<Element><Link to="/Login">GET FUNDING</Link></Element>
+                        :<Element><Link to="/Login">GET STARTED</Link></Element>
                     }
                     </div>
                 </div>

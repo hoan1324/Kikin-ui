@@ -1,0 +1,115 @@
+@import "../../WorkHowStyle.module.scss";
+
+// Đặt màu nền cho section-1
+.section-1 {
+  background-color: $main_bgcolor;
+}
+
+// Cấu hình padding và position cho custom-section-one-common
+.custom-section-one-common {
+  padding: 5rem 0 12rem 0;
+
+  div:first-child {
+    position: unset; // Loại bỏ thuộc tính position cho phần tử đầu tiên
+  }
+}
+
+// Cấu hình các thuộc tính cho các hình ảnh trong img-family
+.img-family {
+  .img-3 {
+    width: 190px;
+    top: 0;
+    left: 0;
+  }
+  .img-2 {
+    top: 10%;
+    right: 0;
+    width: 168px;
+  }
+  .img-1 {
+    bottom: 5%;
+    left: 5%;
+    width: 240px;
+  }
+  .img-0 {
+    width: 140px;
+    bottom: 30%;
+    right: 18%;
+  }
+}
+
+// Các phong cách responsive
+
+// Màn hình có chiều rộng tối đa 1440px
+@media only screen and (max-width: 1440px) {
+  .img-family {
+    .img-3 {
+      width: 170px;
+    }
+    .img-2 {
+      width: 137px;
+    }
+    .img-1 {
+      width: 210px;
+    }
+    .img-0 {
+      width: 140px;
+      right: 6%; // Điều chỉnh vị trí của img-0
+    }
+  }
+}
+
+// Màn hình có chiều rộng tối đa 991px
+@media only screen and (max-width: 991px) {
+  .img-family {
+    .img-3 {
+      width: 150px;
+    }
+    .img-2 {
+      width: 150px;
+    }
+    .img-1 {
+      width: 190px;
+    }
+    .img-0 {
+      width: 120px;
+    }
+  }
+}
+
+// Màn hình có chiều rộng tối đa 767px
+@media only screen and (max-width: 767px) {
+  .img-family {
+    .img-3 {
+      display: none; // Ẩn img-3 trên màn hình nhỏ
+    }
+    .img-2 {
+      width: 130px;
+      bottom: 26%;
+      top: auto; // Loại bỏ thuộc tính top
+    }
+    .img-1 {
+      width: 170px;
+    }
+    .img-0 {
+      width: 100px;
+      bottom: 8%;
+      right: 24%; // Điều chỉnh vị trí của img-0
+    }
+  }
+}
+
+// Màn hình có chiều rộng tối đa 479px
+@media only screen and (max-width: 479px) {
+  .img-family {
+    .img-2 {
+      width: 120px;
+    }
+    .img-1 {
+      width: 160px;
+    }
+    .img-0 {
+      width: 90px;
+    }
+  }
+}

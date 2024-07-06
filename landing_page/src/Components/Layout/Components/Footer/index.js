@@ -40,8 +40,8 @@ function Privacy() {
     <div className={cx("privacy")}>
     <ul>
         <li><Link to="/Blog">Blog</Link></li>
-        <li><Link to="">Privacy policy</Link></li>
-        <li><Link to="">Term of service</Link></li>
+        <li><Link to="/Privacy">Privacy policy</Link></li>
+        <li><Link to="/Term">Term of service</Link></li>
     </ul>
     <div className={cx("social")}>
         <button className={cx("btn-not-color")}><a href="#">Linkedin</a></button>

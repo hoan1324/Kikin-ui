@@ -1,0 +1,145 @@
+@import "../../HomeStyle.module.scss";
+$width-img-default: 30%;
+$left-position: 3%;
+
+.section-7 {
+    overflow: hidden;
+    padding: 6% 0;
+    padding-bottom: 15%;
+    position: relative;
+    h3,
+    p {
+        color: black;
+    }
+
+    h3 {
+        font-size: 600%;
+        font-weight: 900;
+        line-height: 77%;
+    }
+
+}
+
+.ca-sec7 {
+    a {
+        position: unset;
+    }
+}
+
+.caption-section7 {
+    top: 3%;
+    max-width: 100%;
+    left: $width-img-default + $left-position;
+    text-align: start;
+
+    p {
+        margin-top: 4%;
+        font-size: 120%;
+    }
+}
+
+.content-img {
+    position: absolute;
+    left: $width-img-default + $left-position;
+    bottom: 6%;
+
+    .img-Below {
+        width: 40%;
+        margin-bottom: 2%;
+    }
+}
+
+.img-Above {
+    width: $width-img-default;
+}
+
+.imgNearlog {
+    width: 230px;
+    position: absolute;
+
+    &:first-of-type {
+        left: 11%;
+        bottom: 11%;
+        z-index: 4;
+    }
+
+    &:last-child {
+        left: 21%;
+        bottom: 6%;
+        z-index: 3;
+    }
+}
+
+.icon {
+    font-size: 1.5rem;
+    padding: 1%;
+    border-radius: 50%;
+    color: $main_bgcolor;
+    border: 1px solid $button_color_green;
+    position: absolute;
+    bottom: 3%;
+    transition: background-color 1s;
+    right: 4%;
+
+    &:hover,
+    &:active {
+        background-color: $button_hover_green ;
+        color: white;
+    }
+}
+
+.icon-left {
+    right: 9%;
+}
+
+//responsive
+@media only screen and (max-width: 1280px) {
+    .caption-section7 {
+        h3 {
+            font-size: 300%;
+        }
+
+        p {
+            font-size: 100%;
+        }
+    }
+
+    .content-img {
+        bottom: 15%;
+    }
+}
+@media only screen and (max-width: 1065px) {
+    .ca-sec7{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 4%;
+        h3{
+            position: absolute;
+            top: 0;
+            font-size: 350%;
+        }
+    }
+    .caption-section7,.content-img {
+        position: unset;
+    }
+    .caption-section7{
+        p{font-size: 120%;}
+    }
+    .img-Above {
+        width: 100%;
+        padding-top: 22%;
+    }
+    .img-Below{
+        width: 30%;
+    }
+    .imgNearlog{
+        display: none;
+    }
+    .icon{
+        bottom:-4%;
+        padding: 2%;
+    }
+    .icon-left{
+        right: 13%;
+    }
+}

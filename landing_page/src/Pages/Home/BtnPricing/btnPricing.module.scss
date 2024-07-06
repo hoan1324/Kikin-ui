@@ -1,0 +1,25 @@
+@import "../HomeStyle.module.scss";
+.btn-fixed-pricing{
+    bottom: 3%;
+    right: 2%;
+    z-index: 100;
+    background-color: $bg_color_section2;
+    border: 1px solid #8080805e;
+    h6{
+        font-size: 12px;
+        font-weight: 900;
+       
+    }
+    svg:first-child{
+     color: $button_color_green;
+    }
+}
+
+@media only screen and (max-width:978px) {
+    .btn-fixed-pricing{
+        right: 35%;
+        h6{
+            br{display: none;}
+        }
+    }
+}

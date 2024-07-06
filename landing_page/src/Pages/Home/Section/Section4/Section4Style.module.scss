@@ -1,0 +1,251 @@
+@import "../../HomeStyle.module.scss";
+
+// Variables for height and color
+$heightInput: 8px;
+$heightThumbInput: 24px;
+$colorBorder: #80808087;
+
+// Section 4 styling
+.section-4 {
+    color: #f4ede1;
+}
+
+// Content section 4 styling
+.content-sec4 {
+    width: 94%;
+    margin-left: 3%;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+// Title section 4 styling
+.titleSec4 {
+    width: 40%;
+}
+
+// Solution section styling
+.solution {
+    width: 50%;
+    border: 1px solid $colorBorder;
+}
+
+// Choice condition styling
+.choice-condition {
+    border-bottom: 1px solid $colorBorder;
+}
+
+// Input range styling
+input[type="range"] {
+    margin: 0 3rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 13rem;
+
+    &::-webkit-slider-runnable-track {
+        height: $heightInput;
+        border-radius: 5px;
+        background: #f3f0ec4d;
+        outline: none;
+        transition: opacity .2s;
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        border-radius: 50%;
+        margin-top: ($heightInput - $heightThumbInput) / 2; /* Centers thumb on the track */
+        background-color: $button_color_green;
+        width: $heightThumbInput;
+        height: $heightThumbInput;
+    }
+}
+
+// Range condition styling
+.range-condition {
+    font-size: 120%;
+
+    label {
+        width: 40%;
+    }
+
+    svg {
+        margin-right: 1rem;
+    }
+}
+
+// Image logo choice styling
+.image-logo-choice {
+    label {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+// Click condition styling
+.click-condition {
+    margin-top: 8%;
+
+    h3 {
+        font-size: 150%;
+    }
+}
+
+// Checkbox image styling
+.check-box-img {
+    width: 16px;
+    top: 4px;
+    right: 4px;
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+}
+
+// Checkbox image checked state
+input[type="checkbox"]:checked + .check-box-img {
+    opacity: 1;
+}
+
+// Total money styling
+.total-money {
+    color: $button_color_green;
+
+    h4 {
+        background-color: #00800085;
+        font-size: medium;
+        padding: 2px;
+    }
+
+    span {
+        font-size: 300%;
+        font-weight: 700;
+    }
+}
+
+// Detail money styling
+.detail-money {
+    font-size: 130%;
+}
+
+// Responsive design for screens with max width of 1560px
+@media only screen and (max-width: 1560px) {
+    .titleSec4 {
+        h1 {
+            font-size: 600%;
+        }
+    }
+
+    .image-logo-choice {
+        label {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+// Responsive design for screens with max width of 1260px
+@media only screen and (max-width: 1260px) {
+    .family-img-section4 {
+        display: none;
+    }
+
+    .content-sec4 {
+        flex-direction: column;
+    }
+
+    .solution,
+    .titleSec4 {
+        width: 100%;
+    }
+
+    .image-logo-choice {
+        label {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .titleSec4 {
+        margin-bottom: 5%;
+        text-align: center;
+
+        p {
+            width: 70%;
+            margin: 20px auto;
+        }
+    }
+}
+
+// Responsive design for screens with max width of 769px
+@media only screen and (max-width: 769px) {
+    .range-condition {
+        label {
+            width: 30%;
+            font-size: 16px;
+        }
+    }
+
+    .image-logo-choice {
+        label {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+// Responsive design for screens with max width of 500px
+@media only screen and (max-width: 500px) {
+    .range {
+        .slideRange {
+            width: 100%;
+        }
+
+        flex-direction: column;
+
+        label {
+            width: 100%;
+        }
+
+        input[type="range"] {
+            margin-left: 0;
+        }
+
+        span {
+            font-size: 16px;
+        }
+    }
+
+    .img-choice-family {
+        overflow-x: scroll;
+    }
+
+    .image-logo-choice {
+        label {
+            width: 80px;
+            height: 80px;
+            margin-left: 20px;
+        }
+
+        &:first-of-type {
+            label {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .titleSec4 {
+        h1 {
+            font-size: 150%;
+        }
+    }
+
+    .total-money {
+        span {
+            font-size: 26px;
+        }
+    }
+
+    .detail-money {
+        font-size: 16px;
+    }
+}

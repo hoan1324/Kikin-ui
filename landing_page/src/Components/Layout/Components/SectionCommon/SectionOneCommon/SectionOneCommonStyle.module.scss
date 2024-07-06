@@ -1,0 +1,20 @@
+@import "../../../../GlobalStyle/GlobalStyle.module.scss";
+.section-common-1 {
+    padding-top: 16rem;
+
+    h1 {
+        color: $main_textcolor;
+       
+
+        span {
+            color: $button_color_green;
+        }
+    }
+
+}
+.p-sec1{
+    color: white;
+}
+
+
+

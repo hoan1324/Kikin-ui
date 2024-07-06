@@ -1,0 +1,65 @@
+@import "../../HomeStyle.module.scss";
+.section-3 {
+    padding-bottom: 7%;
+}
+.sec3Item {
+    padding: 10% 0 3% 0;
+}
+
+.title-sec3 {
+    position: relative;
+    flex: 0.4;
+
+    h2 {
+        font-weight: 900;
+        margin-top: 4%;
+        letter-spacing: -4px;
+    }
+
+    p {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+.btn-title {
+    padding: 0.3rem 0.5rem;
+}
+
+.chart {
+    flex: 0.5;
+}
+
+.chart-animtion {
+    background-position: center;
+    background-size: cover;
+
+    img {
+        width: 100%;
+    }
+}
+
+
+
+//Responsive
+@media only screen and (max-width: 1400px) {
+    .title-sec3 {
+        h2 {
+            font-size: 225%;
+            letter-spacing: normal;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+  
+
+    .sec3Item {
+        flex-direction: column;
+
+        p {
+            position: unset;
+            margin-top: 5%;
+        }
+    }
+}

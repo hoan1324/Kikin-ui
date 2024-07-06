@@ -1,0 +1,58 @@
+@import "../../HomeStyle.module.scss";
+.section-6{
+    background-color: $section7-bg;
+} 
+.img-section6{
+    padding-top: 2rem;
+    margin-bottom: 2%;
+    img{
+        width: 96%;
+    }
+}
+.title-section6{
+    top: 8%;
+    font-size: 550% !important;
+    text-align: end !important;
+    color: #f4ede1;
+    right: 6%;
+    color: $main_textcolor;
+    line-height: 100% !important;
+
+}
+.parameter-section6{
+    margin-top: 0;
+    position: absolute;
+    text-align: start;
+    bottom: 0;
+    left: 5%;
+    color: #f4ede1;
+}
+.table-title{
+    padding-bottom: 15%;
+}
+.icon-sponsor{
+    padding: 1%;
+    background-color: black;
+    color:  $section7-bg;
+    margin-bottom: 9%;
+    margin-left: 10%;
+    margin-top: 8%;
+    
+}
+.p-sponsor{
+    margin-left: 10%;
+    transition: max-height 1s;
+}
+.sponsor{
+    img{
+        width: 300%;
+        margin: 5% 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .title-section6{
+        top: 14%;
+        right: 4%;
+    }
+}

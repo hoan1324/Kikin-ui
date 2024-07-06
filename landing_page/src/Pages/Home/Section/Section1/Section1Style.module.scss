@@ -1,0 +1,21 @@
+@import "../../HomeStyle.module.scss";
+.section-1 {
+   
+
+    img {
+        width: 100%;
+        background-color: $main_bgcolor;
+    }
+}
+
+
+//Responsive
+@media only screen and (max-width: 600px) {
+    .section-1 {
+    img{
+        transform: translateX(-27%);
+        width: 200%;
+    }
+    }
+    
+}

@@ -1,5 +1,5 @@
-import styles from "../../HomeStyle.module.scss"
-import { imageSection2 } from "../../../../ImageLink/imageLink";
+import styles from "./Section2Style.module.scss"
+import { imageSection2 } from "../../../../ImageLink/imageLinkHome";
 
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ function SectionTwo(){
             
          imgArray.forEach((element,index)=>{
             const elmGet = element.getBoundingClientRect();
-            const isVisible = window.scrollY > elmGet.top ;
+            const isVisible =  elmGet.bottom <500 ;
             
             setVisible(pre=>{
                 let newVisible=[...pre];

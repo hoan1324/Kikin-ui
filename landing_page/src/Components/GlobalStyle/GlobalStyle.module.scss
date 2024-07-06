@@ -6,7 +6,9 @@ $main_textcolor: #f4ede1;
 $sub_bgcolor: #f3ede4;
 $button_color_green: #55dd4a;
 $button_hover_green: #77e46e;
-
+$bg_color_section2:rgb(243, 237, 228);
+$section-6-h1-color:rgb(86, 96, 83);
+$section7-bg:rgb(115, 211, 235);
 * {
     margin: 0;
     padding: 0;
@@ -34,35 +36,43 @@ ul {
 
 //Common class
 //imgae
-.img-family-circle{
-    img{
+.img-family-circle {
+    img {
         width: 168px;
         height: 168px;
         position: absolute;
     }
 }
-.img-family-square{
-    img{
+
+.img-family-square {
+    img {
         width: 180px;
         height: 180px;
         position: absolute;
     }
 }
+
 //section 
+.section-bg{
+    background-color: $bg_color_section2;
+}
 .parameter {
     margin-top: 2rem;
     font-size: 110%;
 }
-.section{
+
+.section {
     overflow: hidden;
-    h1{
-        font-size: 800%;
+
+    h1 {
+        font-size: 700%;
         line-height: 77%;
         font-weight: 900;
     }
+
     button {
         margin-top: 2rem;
-        padding: 1% 2%;
+       
 
         a {
             font-size: 120%;
@@ -72,6 +82,7 @@ ul {
 
     }
 }
+
 //btn
 .btn-green {
     transition: background-color 0.5s;
@@ -107,9 +118,10 @@ ul {
 .image-position {
     text-align: center;
     position: relative;
-    padding-top: 14rem;
+    padding-top: 15%;
     z-index: 10;
 }
+
 .title-position {
     position: absolute;
     top: 6rem;
@@ -118,6 +130,10 @@ ul {
 }
 
 //Animation
+.animationSlide{
+    animation: slideUp 1s ease-in-out forwards;
+
+}
 .animationVisible {
     overflow: hidden;
     max-height: 30rem !important;
@@ -134,13 +150,15 @@ ul {
 
 //mediaquert common class
 @media only screen and (max-width: 970px) {
-    .parameter{
+    .parameter {
         font-size: 90% !important;
         margin-top: 0.2rem;
-       p{
-        margin-bottom: 0rem;
-       }
+
+        p {
+            margin-bottom: 0rem;
+        }
     }
+
     .image-position {
         h1 {
             font-size: 300% !important;
@@ -150,24 +168,77 @@ ul {
             padding: 2%;
         }
     }
-    .img-family{
-       .img-icon-postion{
-            width: 140px;
-            height: 140px;
+
+    .img-family-square,
+    .img-family-circle {
+        img {
+            width: 130px;
+            height: 130px;
         }
     }
 }
+
 @media only screen and (max-width: 600px) {
-    .parameter{
+    .parameter {
         font-size: 75% !important;
     }
+
     .image-position {
         overflow: hidden;
+        padding-top: 30%;
     }
-    .img-family{
-        .img-icon-postion{
+
+    .img-family-circle {
+        img {
             width: 120px;
             height: 120px;
         }
     }
+
+    .img-family-square {
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
 }
+@media only screen and (max-width: 479px) {
+    .image-position {
+        padding-top: 60%;
+    }
+    .img-family-circle {
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+//keyFrame
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes rotateMinus {
+    from{
+        transform: rotateZ(90deg);
+    }
+    to{
+        transform: rotateZ(180deg);
+    }
+}
+@keyframes rotateMinusReverse {
+    from{
+        transform: rotateZ(180deg);
+    }
+    to{
+        transform: rotateZ(90deg);
+    }
+}
+

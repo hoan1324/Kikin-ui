@@ -1,40 +1,46 @@
+import styles from "./Section7Style.module.scss"
+import {imageSection7} from "../../../../ImageLink/imageLinkHome"
+
 import classNames from "classnames/bind";
-import { useState,useRef,useEffect } from "react";
+import { Image } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-import styles from "../../HomeStyle.module.scss";
-import { titleSponsor,h1pSec7 } from "./title"; 
-
-const cx = classNames.bind(styles)
+const cx=classNames.bind(styles)
 function SectionSeven(){
-    return (
-        <div className={cx("section","section-7")}>
-            <div className={cx("image-position","img-section7")}>
-              <h1 className={cx("title-section7","title-position")}>
-              {h1pSec7.title.split('\n').map((line, index) => (
-        <React.Fragment key={index}>
-            {line}
-            {index < h1pSec7.param.split('\n').length && <br />}
-        </React.Fragment>
-    ))}
-              </h1>
+return (
+    <div className={cx("section-7","section-bg")}>
+       <Carousel className={cx("ca-sec7")} indicators={false} slide={false}
+         prevIcon={<FontAwesomeIcon className={cx("icon-left","icon")} icon={faArrowLeft}  />}
+         nextIcon={<FontAwesomeIcon className={cx("icon-right","icon")} icon={faArrowRight}  />}
+       >
+      {imageSection7.map((prop)=>(
+        <Carousel.Item className={cx("caItem-sec7")}   interval={2000}>
+          {prop.imgAbove && <Image className={cx("img-Above")} src={prop.imgAbove} />}     
+          <Carousel.Caption className={cx("caption-section7")}>
+          {prop.title && <h3>
+            {prop.title.split('\n').map((line, index) => (
+                        <React.Fragment key={index}>
+                            {line}
+                            {index < prop.title.split('\n').length && <br />}
+                        </React.Fragment>
+                    ))}
+            </h3>}
+          {prop.content &&  <p>{prop.content}</p>}
+        </Carousel.Caption>
+       <div className={cx("content-img")}>
+       {prop.imgBelow && <Image className={cx("img-Below")} src={prop.imgBelow} />}
+       {prop.content_logo && <p className={cx("content-p")}>{prop.content_logo}</p>}
+       </div>
+      </Carousel.Item>
+      ))}
+    </Carousel>  
+    <img className={cx("imgNearlog")} src="/assest/pictures/pic_home_18.png" />
+    <img className={cx("imgNearlog")} src="/assest/pictures/pic_home_19.png" />
 
-            <div className={cx("parameter","parameter-section7")}>
-                <p>{h1pSec7.param.split('\n').map((line, index) => (
-        <React.Fragment key={index}>
-            {line}
-            {index < h1pSec7.param.split('\n').length && <br />}
-        </React.Fragment>
-    ))}</p>
-            </div>
-            <img src="/assest/pictures/SponsorBg.png" alt="bg-sponsor" /> 
-
-            </div>
-            <div className={cx("sponsor")} >
-                <div className={cx("table-title")}></div>
-                <img alt="sponsor" />
-            </div>
-        </div>
-    )
+    </div>
+)
 }
 export {SectionSeven}

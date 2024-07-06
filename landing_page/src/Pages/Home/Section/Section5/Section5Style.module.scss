@@ -1,0 +1,50 @@
+@import "../../HomeStyle.module.scss";
+.section-5{
+    padding: 20% 0;
+    .img-family-square{
+        img{
+            transform: rotateZ(-27deg);
+        &:first-child{
+            transform: rotateZ(13deg);
+        }
+        }
+
+    }
+}
+.title-family{
+   h1{
+    color:$section-6-h1-color ;
+    font-size: 450%;
+   }
+}
+
+
+@media only screen and (max-width: 1400px) {
+    .section-6{
+        padding: 25% 0;
+    }
+    .title-family{
+        h1{
+         font-size: 330% !important;
+        }
+     }
+}
+@media only screen and (max-width: 997px) {
+    .title-family{
+        h1{
+         font-size: 220% !important;
+        }
+     }
+     .up{
+        top: 11% !important;
+    }
+     
+}
+@media only screen and (max-width: 600px) {
+    .section-5{
+        padding: 40% 0;
+    }
+    .left{
+        opacity: 0;
+    }
+}

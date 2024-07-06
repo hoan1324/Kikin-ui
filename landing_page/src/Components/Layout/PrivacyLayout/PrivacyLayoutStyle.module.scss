@@ -1,0 +1,13 @@
+@import "../../GlobalStyle/GlobalStyle.module.scss";
+.content{
+    background-color: $main_bgcolor;
+    color: $main_textcolor;
+    padding-bottom:2%;
+
+    ul{
+        list-style: inside;
+        li{
+            list-style-position:outside
+        }
+    }
+}

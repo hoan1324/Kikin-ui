@@ -1,0 +1,13 @@
+@import "../../HomeStyle.module.scss";
+.section-2{
+    padding-bottom: 3rem;
+    h1{
+        font-size: 600%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+.section-2{
+    padding: 24%;
+}
+}
