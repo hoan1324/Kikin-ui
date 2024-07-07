@@ -9,7 +9,6 @@ const cx = classNames.bind(styles)
 function SectionFive() {
     const [changeColor, setChangeColor] = useState(Array(titleH1.length).fill(false));
     let titleRef=useRef(null);
-    let sectionRef=useRef(null);
     useEffect(()=>{
         
         const scrollChangeColor = () => {
@@ -40,7 +39,7 @@ function SectionFive() {
     },[]);
 
     return (
-        <div ref={sectionRef} className={cx("section-5", "section", "image-position")}>
+        <div  className={cx("section-5", "section", "image-position")}>
             <div ref={titleRef} className={cx("title-family")}>
                 {titleH1.map((tH1) => (
                     <h1 key={tH1.id}

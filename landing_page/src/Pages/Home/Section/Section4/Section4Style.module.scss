@@ -114,6 +114,7 @@ input[type="checkbox"]:checked + .check-box-img {
         background-color: #00800085;
         font-size: medium;
         padding: 2px;
+        width: min-content;
     }
 
     span {

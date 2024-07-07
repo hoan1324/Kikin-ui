@@ -22,7 +22,6 @@ const titleSec2 = [
         h2: 'MAKE MONTHLY REPAYMENTS',
         p: 'As you repay, we automatically top up your available funding, allowing your business to maintain a healthy cash flow and freeing up capital for growth.',
     btn:"CACULATE YOUR FUNDING"
-
     }
 
 ]

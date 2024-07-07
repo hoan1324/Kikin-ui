@@ -128,8 +128,31 @@ ul {
     width: 100%;
     z-index: 10;
 }
-
+.reverse-minus {
+    position: absolute;
+    right: 0%;
+    transform: rotateZ(90deg);
+}
 //Animation
+/* Hiệu ứng xoay */
+.animationRotate {
+    transform: rotateZ(90deg);
+    animation: rotateMinus .5s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+
+}
+
+/* Hiệu ứng xoay ngược lại */
+.animationRotateReverse {
+    transform: rotateZ(180deg);
+    animation: rotateMinusReverse .5s ease-in-out .3s 1;
+    animation-fill-mode: forwards;
+
+}
+.animation-slide{
+    animation: slide 15s linear 2s infinite alternate-reverse backwards  !important;
+    
+    }
 .animationSlide{
     animation: slideUp 1s ease-in-out forwards;
 
@@ -147,7 +170,20 @@ ul {
     max-height: 0rem !important;
     transition: max-height 1s ease-in-out;
 }
-
+.animation-change-bgcolor{
+    background-color: $button_color_green !important;
+    transition:background-color 1s;
+    }
+    .animation-notchange-bgcolor{
+        transition:background-color 1s;
+    }
+.animation-change-color{
+    color: $button_color_green !important;
+    transition: color 1s;
+    }
+    .animation-notchange-color{
+        transition: color 1s;
+    }
 //mediaquert common class
 @media only screen and (max-width: 970px) {
     .parameter {
@@ -225,6 +261,10 @@ ul {
         transform: translateY(0);
     }
 }
+.animation-slide{
+    animation: slide 15s linear 2s infinite alternate-reverse backwards  !important;
+    
+    }
 @keyframes rotateMinus {
     from{
         transform: rotateZ(90deg);

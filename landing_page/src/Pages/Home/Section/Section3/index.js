@@ -19,7 +19,7 @@ function SectionThree() {
             </div>
             <div className={cx("chart","ms-auto")}>
 
-                <div className={cx(title.imgAnimate.class,"chart-animtion")}
+                <div className={cx(title.imgAnimate.class,"chart-animtion","rounded")}
                   style={{
                     backgroundImage: `url(${title.imgAnimate.img})`
                   }}
