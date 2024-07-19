@@ -74,11 +74,10 @@ function SectionSix() {
             <div className={cx("sponsor")} >
                 <div className={cx("row" , "border-bottom" ,"border-dark","sponsor-row")} >
                     {
-                        titleSponsor.map((title) => (
-                            <div className={cx("col-sm-12", "col-md", "border-top","border-end", "border-dark", "table-title")}>
+                        titleSponsor.map((title,index) => (
+                            <div key={index} className={cx("col-sm-12", "col-md", "border-top","border-end", "border-dark", "table-title")}>
                                 <FontAwesomeIcon className={cx("h5", "fw-bolder", "rounded-circle", "icon-sponsor")} icon={title.icon} />
                                 <br />
-                                {console.log("top:"+(top + 500))}
                                 <p className={cx("h3", "fw-bolder", "p-sponsor", (visible.p === false) ? "opacity-0" : "animationSlide")}>{title.content.split('\n').map((line, index) => (
 
                                     <React.Fragment key={index}>

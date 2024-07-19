@@ -1,0 +1,20 @@
+@import "../../../Components/GlobalStyle/GlobalStyle.module.scss";
+
+.body-blog-detail{
+    background-color: $sub_bgcolor;
+    margin-bottom: -1%;
+    padding-bottom: 5%;
+    ul{
+        list-style: disc;
+    }
+}
+.title{
+    p{
+        font-weight: 400;
+        color: #808080a6;
+    }
+    img{
+        width: 88%;
+        border-radius: 22px;
+    }
+}

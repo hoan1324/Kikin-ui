@@ -1,0 +1,16 @@
+@import "../../Components/GlobalStyle/GlobalStyle.module.scss";
+.content-blog{
+    background-color: $sub_bgcolor;
+    .date{
+        color: #808080a6;
+        font-weight: 500;
+    }
+}
+.blog-item{
+    cursor: pointer;
+}
+@media only screen and (max-width:768px) {
+    .date{
+        position: unset!important;
+    }
+}

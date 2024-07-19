@@ -1,0 +1,232 @@
+@import "../../Components/GlobalStyle/GlobalStyle.module.scss";
+
+/* Container cho toàn bộ phần đăng nhập */
+.body-login {
+    color: $main_textcolor; // Đặt màu chữ chính
+    background-color: $main_bgcolor; // Đặt màu nền chính
+    height: 100vh; // Chiều cao toàn màn hình
+    padding-bottom: 4%; // Khoảng cách dưới
+
+    /* Nội dung chính của phần đăng nhập */
+    .body-content {
+        max-width: 600px; // Đặt chiều rộng tối đa cho nội dung
+    }
+
+    /* Định dạng cho button và input */
+    button {
+        color: $main_bgcolor; // Màu chữ cho button
+    }
+
+    button,
+    input {
+        padding-bottom: 10px; // Padding dưới cho button và input
+        padding-top: 10px; // Padding trên cho button và input
+        width: 80%; // Chiều rộng 80%
+        height: 56px; // Chiều cao 56px
+    }
+}
+
+/* Định dạng cho phần nội dung */
+.content {
+    h5 {
+        font-weight: 900; // Độ đậm chữ cho tiêu đề h5
+    }
+}
+
+/* Định dạng cho button Google */
+.btn-google {
+    border: none; // Không có viền
+    transition: border .3s; // Thời gian chuyển đổi viền khi active
+
+    &:active {
+        border: 4px solid gray; // Viền khi active
+    }
+
+    /* Định dạng cho phần tử a bên trong button */
+    a {
+        display: flex; // Sử dụng flexbox
+        align-items: flex-start; // Căn chỉnh theo trục chính
+        justify-content: center; // Căn giữa theo trục ngang
+        color: $main_bgcolor; // Màu chữ
+        font-weight: 500; // Độ đậm chữ
+    }
+}
+
+/* Định dạng cho tiêu đề "or" */
+.title-or {
+    &::after,
+    &::before {
+        content: "";
+        width: 28%; // Chiều rộng 28%
+        height: 1px; // Chiều cao 1px
+        background-color: gray; // Màu nền xám
+        position: absolute;
+        top: 47%; // Vị trí từ trên xuống 47%
+        border-radius: 10px; // Bo góc 10px
+    }
+
+    &::before {
+        left: 19%; // Vị trí từ trái sang 19%
+    }
+
+    &::after {
+        right: 19%; // Vị trí từ phải sang 19%
+    }
+}
+
+/* Định dạng cho form bên trong body-content */
+.body-content {
+    form {
+        /* Định dạng cho placeholder của input */
+        input::placeholder {
+            color: gray; // Màu chữ xám
+            font-weight: 400; // Độ đậm chữ
+        }
+
+        /* Định dạng cho button submit */
+        button[type="submit"] {
+            font-weight: 500; // Độ đậm chữ
+        }
+    }
+}
+
+/* Định dạng cho button khi disabled */
+button:disabled {
+    opacity: 0.4; // Độ mờ
+    cursor: not-allowed; // Con trỏ không được phép
+    box-shadow: none; // Không có bóng
+    background-color: #ABE59E; // Màu nền
+    pointer-events: none; // Vô hiệu hóa sự kiện chuột
+}
+
+/* Định dạng cho danh sách liên kết */
+.terms-privacy-contactUs {
+    margin-top: 28%; // Khoảng cách trên 28%
+
+    li,
+    a {
+        color: gray; // Màu chữ xám
+    }
+}
+
+/* Responsive styles cho màn hình có chiều rộng tối đa 1090px */
+@media only screen and (max-width: 1090px) {
+    .image-common {
+        width: 140px; // Chiều rộng 140px
+        height: 140px; // Chiều cao 140px
+    }
+
+    .image0 {
+        display: none; // Ẩn hình ảnh
+    }
+
+    .image5 {
+        width: 85px; // Chiều rộng 85px
+        height: 90px; // Chiều cao 90px
+    }
+
+    .image4 {
+        width: 128px; // Chiều rộng 128px
+        height: 86px; // Chiều cao 86px
+        top: 21% !important; // Vị trí từ trên xuống 21%
+    }
+}
+
+/* Responsive styles cho màn hình có chiều rộng tối đa 798px */
+@media only screen and (max-width: 798px) {
+    .image1 {
+        top: -3% !important; // Vị trí từ trên xuống -3%
+        right: -6% !important; // Vị trí từ phải sang -6%
+    }
+
+    .image2 {
+        bottom: 13% !important; // Vị trí từ dưới lên 13%
+        right: -10% !important; // Vị trí từ phải sang -10%
+    }
+
+    .image3 {
+        top: 10% !important; // Vị trí từ trên xuống 10%
+        left: -10% !important; // Vị trí từ trái sang -10%
+    }
+
+    .image4 {
+        left: -10% !important; // Vị trí từ trái sang -10%
+    }
+
+    .image5 {
+        top: 10% !important; // Vị trí từ trên xuống 10%
+        right: -3% !important; // Vị trí từ phải sang -3%
+    }
+}
+
+/* Responsive styles cho màn hình có chiều rộng tối đa 590px */
+@media only screen and (max-width: 590px) {
+    .body-login {
+        height: auto; // Chiều cao tự động
+        button,
+        input {
+            width: 100% !important; // Chiều rộng 100%
+            height: auto !important; // Chiều cao tự động
+            padding-top: 4px !important; // Padding trên 4px
+            padding-bottom: 4px !important; // Padding dưới 4px
+        }
+    }
+
+   
+
+    .body-content {
+        form {
+            input[type="email"] {
+                padding-top: 7px !important; // Padding trên 7px
+                padding-bottom: 7px !important; // Padding dưới 7px
+            }
+
+            input::placeholder {
+                color: rgba(128, 128, 128, 0.71); // Màu chữ xám với độ mờ
+                font-weight: 200; // Độ đậm chữ 200
+                font-size: 16px; // Kích thước chữ 16px
+            }
+
+            button[type="submit"] {
+                font-weight: 500; // Độ đậm chữ 500
+                font-size: 18px !important; // Kích thước chữ 18px
+            }
+        }
+    }
+
+    .image-common {
+        width: 110px; // Chiều rộng 110px
+        height: 110px; // Chiều cao 110px
+    }
+
+    .image2 {
+        display: none; // Ẩn hình ảnh
+    }
+
+    .image3 {
+        left: -19% !important; // Vị trí từ trái sang -19%
+    }
+
+    .image4 {
+        width: 78px; // Chiều rộng 78px
+        height: 56px; // Chiều cao 56px
+        left: -18% !important; // Vị trí từ trái sang -18%
+    }
+
+    .image5 {
+        display: none; // Ẩn hình ảnh
+    }
+
+    .content {
+        p {
+            font-size: 14px !important; // Kích thước chữ 14px
+        }
+    }
+
+    .terms-privacy-contactUs {
+        li,
+        a {
+            font-size: 15px; // Kích thước chữ 15px
+        }
+    }
+}

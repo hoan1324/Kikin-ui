@@ -1,17 +1,22 @@
 @import "../../WorkHowStyle.module.scss";
 
+// Variables for commonly used styles
 $bg-border-not-animation: rgba(243, 237, 228, 0.3);
+$height-scroll: 0;
 
+// Section 2 styles
 .section-2 {
     padding-bottom: 7%;
     background-color: $main_bgcolor;
     color: $main_textcolor;
 }
 
+// Parent container for section items
 .sec2Item-parent {
     padding: 10% 0 3% 0;
 }
 
+// Title styles
 .title-sec2 {
     position: relative;
     flex: 0.4;
@@ -21,10 +26,9 @@ $bg-border-not-animation: rgba(243, 237, 228, 0.3);
         margin-top: 4%;
         letter-spacing: -4px;
     }
-
-
 }
 
+// Button styles
 .btn-title {
     margin-top: 80%;
     margin-left: 80%;
@@ -34,6 +38,7 @@ $bg-border-not-animation: rgba(243, 237, 228, 0.3);
     padding: 0.3rem 0.5rem;
 }
 
+// Border animation styles
 .sec2Item-parent {
     .border-btn-animation {
         width: 3px;
@@ -41,15 +46,24 @@ $bg-border-not-animation: rgba(243, 237, 228, 0.3);
         background-color: $bg-border-not-animation;
         margin-left: 125%;
         margin-top: 15%;
+
+        .content-border {
+            transition: max-height .8s ease;
+            max-height: 0;
+            width: 3px;
+            background-color: $button_color_green;
+        }
     }
 
+    // Adjust height for the last item
     &:last-of-type {
         .border-btn-animation {
-            height: 100%;
+            height: 100%!important;
         }
     }
 }
 
+// Chart styles
 .chart {
     flex: 0.5;
 }
@@ -63,16 +77,19 @@ $bg-border-not-animation: rgba(243, 237, 228, 0.3);
     }
 }
 
+// Question title styles
 .title-question {
     margin-top: 30%;
 }
 
+// Question paragraph styles
 .question {
     p {
         max-height: 0;
         overflow: hidden;
     }
 
+    // Add underline to the question section
     &::after {
         content: "";
         position: absolute;
@@ -83,7 +100,33 @@ $bg-border-not-animation: rgba(243, 237, 228, 0.3);
     }
 }
 
-//Responsive
+// Button calculate styles
+.btn-caculate {
+    margin-top: 20%;
+    padding: 2%;
+
+    a {
+        color: $main_textcolor;
+        font-weight: 700;
+        font-size: 100%;
+    }
+}
+
+// Responsive styles for different screen sizes
+
+// For large screens
+@media only screen and (min-width: 1560px) {
+    .border-btn-animation {
+        margin-left: 294% !important;
+        height: 135% !important;
+    }
+
+    .btn-title {
+        margin-left: 250%;
+    }
+}
+
+// For medium screens
 @media only screen and (max-width: 1400px) {
     .title-sec2 {
         h2 {
@@ -92,33 +135,39 @@ $bg-border-not-animation: rgba(243, 237, 228, 0.3);
         }
     }
 }
-@media only screen and (max-width: 1270px) {
-    
-        .btn-title {
-            margin-left: 0;
-        }
-    
-        .sec2Item-parent {
-            .border-btn-animation {
-                margin-left: 46%;
-                height: 120%;
-            }
-           
-        }
-}
 
-@media only screen and (max-width: 992px) {
+// For small screens
+@media only screen and (max-width: 1270px) {
     .btn-title {
         margin-left: 0;
     }
 
     .sec2Item-parent {
         .border-btn-animation {
+            margin-left: 46%;
+            height: 120%;
+        }
+    }
+}
+
+// For extra small screens
+@media only screen and (max-width: 992px) {
+    .btn-title {
+        margin-left: 0;
+    }
+
+    .btn-caculate {
+        margin-top: 2%;
+    }
+
+    .sec2Item-parent {
+        .border-btn-animation {
             height: 106%;
         }
+
         &:last-of-type {
             .border-btn-animation {
-                height: 90%;
+                height: 90%!important;
             }
         }
     }
@@ -135,11 +184,13 @@ $bg-border-not-animation: rgba(243, 237, 228, 0.3);
         margin-top: 9%;
         width: 100%;
     }
-
 }
+
+// For very small screens
 @media only screen and (max-width: 652px) {
     .sec2Item-parent {
         .border-btn-animation {
             height: 100%;
-        }}
+        }
+    }
 }

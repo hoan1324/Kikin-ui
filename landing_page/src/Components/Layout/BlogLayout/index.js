@@ -1,13 +1,13 @@
-import styles from "../DefaultLayout/DefaultLayouStyle.module.scss"
+import styles from ".BlogLayouStyle.module.scss"
 import classNames from "classnames";
 import { Header,Footer } from "../Components";
 
-function LayoutNotQues({children,bgColor,logoBlack,textColor}) {
+function BlogLayout({children}) {
     const cx=classNames.bind(styles)
     return ( 
         <div className={cx("body-page")} >
          
-            <Header bgColor={bgColor} logoBlack={logoBlack} textColor={textColor}/>
+            <Header bgColor={"#f3ede4"}/>
         
          <div className={cx("content")}>{children}</div>
         
@@ -17,4 +17,4 @@ function LayoutNotQues({children,bgColor,logoBlack,textColor}) {
      );
 }
 
-export default LayoutNotQues;
+export default BlogLayout;

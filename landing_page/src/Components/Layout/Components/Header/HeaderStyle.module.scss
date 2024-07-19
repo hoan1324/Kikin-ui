@@ -9,6 +9,7 @@ $text_hover: #e3ded9;
 .position-fixed {
     position: fixed;
     z-index: 1000;
+    top: 0;
 }
 
 // Header styles
@@ -27,11 +28,12 @@ nav {
 
     // Link styles
     a {
-        font-weight: 600;
+        font-weight: 500;
     }
 
     ul {
         display: flex;
+        margin-bottom: 0;
     }
 
     li {
@@ -64,6 +66,9 @@ nav {
 // Tiêu đề
 .title {
     flex: auto;
+    a{
+        font-size: 20px;
+    }
 }
 
 // Button styles
@@ -88,6 +93,12 @@ nav {
     }
 }
 
+.login{
+    a{
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
 // Icon bars styles (mobile menu)
 .iconbars {
     font-size: 1.1rem;

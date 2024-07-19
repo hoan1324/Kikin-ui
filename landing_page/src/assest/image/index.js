@@ -34,7 +34,10 @@ const imagesChartWorkHow =[
     }
 ]
 const imgLogo={
-   checkbox:require('./checkbox.svg').default
+   checkbox:require('./checkbox.svg').default,
+   google:require('./logoGoogle.svg').default,
 }
+
+
 
 export  {imagesChartHome,imgLogo,imagesChartWorkHow};

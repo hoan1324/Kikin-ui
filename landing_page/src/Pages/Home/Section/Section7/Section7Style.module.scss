@@ -143,3 +143,13 @@ $left-position: 3%;
         right: 13%;
     }
 }
+@media only screen and (max-width: 576px) {
+.caption-section7{
+    h3{
+        font-size: 30px;
+    }
+}
+.icon-left{
+    right: 16%;
+}
+}
